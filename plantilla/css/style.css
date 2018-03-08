@@ -8,8 +8,8 @@
 
 @font-face {
     font-family: 'buttercup';
-    src: url('https://bakery09-toroiez.c9users.io/tpv_bootstrap3/plantilla/font/buttercup.woff2') format('woff2'),
-    url('https://bakery09-toroiez.c9users.io/tpv_bootstrap3/plantilla/font/buttercup.woff') format('woff');
+    src: url('../../plantilla/font/buttercup.woff2') format('woff2'),
+    url('../../plantilla/font/buttercup.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
