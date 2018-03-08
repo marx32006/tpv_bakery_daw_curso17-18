@@ -46,7 +46,6 @@
                         listado[i].id + '"><div>' +
                         listado[i].product +
                         '</div><div><img style="width: 150px;" src="product/viewPhotoAndPhotoDefault&idPhoto=' + listado[i].id + '.jpg"></div></li>');
-                    //addProductTicket(listado[i].id, li);
                     $('#listProduct').append(li);
 
                     li.on('click', addProductTable2);
@@ -81,7 +80,6 @@
                 var listado = json.listado;
                 for (var i = 0; i < listado.length; i++) {
                     var li = $('<li class = "pbox" data-id="' + listado[i].id + '"><div>' + listado[i].product + '</div><div><img style="width: 150px;"src="product/viewPhotoAndPhotoDefault&idPhoto=' + listado[i].id + '.jpg"></div></li>');
-                    //addProductTicket(listado[i].id, li);
                     $('#listProduct').append(li);
 
                     li.on('click', addProductTable2);
@@ -93,105 +91,7 @@
             }
         );
     }
-    //$('#listProduct').on('click', addProductTable);
-
-    // function addProductTable(event) {
-    //     event.preventDefault();
-    //     var id = $(this).attr('data-id');
-
-    //     $.ajax({
-    //         url: 'ticketajax/getProductPorId',
-    //         type: 'get',
-    //         dataType: 'json',
-    //         data: {
-    //             idproduct: id
-    //         }
-    //     }).done(
-    //         function(json) {
-    //             console.log('linea: ' + json.linea);
-    //             //console.log('carrito: ' + json.carrito);
-
-    //             var carrito = json.carrito;
-
-    //             for(var i=0; i< carrito.length; i++){
-    //                  console.log('nombre: ' + carrito[i].item.description);
-    //                 //      var tr = '<tr data-id=' + carrito[i].item. + '>' +
-    //                 //     '<td id="id">' + carrito[i].item.id + '</td>' +
-    //                 //     '<td id="cant">' + carrito[i].cantidad + '</td>' +
-    //                 //     '<td id="product">' + carrito[i].item.description + '</td>' +
-    //                 //     '<td id="price">' + carrito[i].item.price + '</td>' +
-    //                 //     '<td id="result">' + carrito[i].item.price + '</td>' +
-    //                 //     '<td id="sum"> + </td>' +
-    //                 //     '<td id="sub"> - </td>' +
-    //                 //     '<td id="rem"> x </td>' +
-    //                 //     '</tr>';
-    //                 // $('#tableTicket').append(tr);
-    //             }
-    //             var producto = json.producto;
-    //             var repeat = true;
-    //             var idProd = 0;
-    //             var arrayVariable = [];
-    //             $('#tableTicket').find('tr').each(function(i) {
-    //                 arrayVariable[i] = $(this).attr('data-id');
-    //                 //console.log(arrayVariable[i]);
-    //                 if (arrayVariable[i] == producto.id) {
-    //                     repeat = false;
-    //                     idProd = i;
-    //                 }
-    //             });
-
-    //             $('tr').find('#sum').unbind('click', suma);
-    //             $('tr').find('#sub').unbind('click', subtraction);
-    //             $('tr').find('#rem').unbind('click', removeTicket);
-
-    //             if (repeat) {
-    //                 addTicket();
-    //                 priceTotal();
-    //             }
-    //             else {
-    //                 var cant = modifyCant(producto.id);
-    //                 var price = producto.price;
-    //                 modifyResult(producto.id, cant, price);
-    //                 priceTotal();
-
-    //             }
-    //             $('tr').find('#sum').on('click', suma);
-    //             $('tr').find('#sub').on('click', subtraction);
-    //             $('tr').find('#rem').on('click', removeTicket);
-
-    //             function addTicket() {
-    //                                     //      var tr = '<tr data-id=' + carrito[i].item. + '>' +
-    //                 //     '<td id="id">' + carrito[i].item.id + '</td>' +
-    //                 //     '<td id="cant">' + carrito[i].cantidad + '</td>' +
-    //                 //     '<td id="product">' + carrito[i].item.description + '</td>' +
-    //                 //     '<td id="price">' + carrito[i].item.price + '</td>' +
-    //                 //     '<td id="result">' + carrito[i].item.price + '</td>' +
-    //                 //     '<td id="sum"> + </td>' +
-    //                 //     '<td id="sub"> - </td>' +
-    //                 //     '<td id="rem"> x </td>' +
-    //                 //     '</tr>';
-    //                 // $('#tableTicket').append(tr);
-    //                 var tr = '<tr data-id=' + producto.id + '>' +
-    //                     '<td id="id">' + producto.id + '</td>' +
-    //                     '<td id="cant">' + 1 + '</td>' +
-    //                     '<td id="product">' + producto.description + '</td>' +
-    //                     '<td id="price">' + producto.price + '</td>' +
-    //                     '<td id="result">' + producto.price + '</td>' +
-    //                     '<td id="sum"> + </td>' +
-    //                     '<td id="sub"> - </td>' +
-    //                     '<td id="rem"> x </td>' +
-    //                     '</tr>';
-    //                 $('#tableTicket').append(tr);
-    //             }
-    //         }
-
-    //     ).fail(
-    //         function() {
-    //             alert('Error ticket');
-    //         }
-    //     );
-    // }
-
+    
     function addProductTable2(event) {
         event.preventDefault();
         var id = $(this).attr('data-id');
@@ -205,7 +105,6 @@
             }
         }).done(
             function(json) {
-                //    alert("funciona click suma");
                 var carrito = json.carrito;
                 carrito2(carrito);
             }
@@ -217,9 +116,7 @@
     }
 
     function ProductSuma() {
-        //event.preventDefault();
         var id = $(this).parent('tr').attr('data-id');
-
         $.ajax({
             url: 'ticketajax/getProductPorId',
             type: 'get',
@@ -229,7 +126,6 @@
             }
         }).done(
             function(json) {
-                //    alert("funciona click suma");
                 var carrito = json.carrito;
                 carrito2(carrito);
             }
@@ -270,12 +166,8 @@
                     }
                 }).done(
                     function(json) {
-                        //    alert("funciona click remove");
                         var carrito = json.carrito;
-                        //  var total = json.total;
-                        //  console.log(total);
                         carrito2(carrito);
-                        //  swal('hola');
                     }
                 ).fail(
                     function() {
@@ -336,7 +228,7 @@
             if ($(this).parent('tr').find('#cant').text() == 1) {
 
                 swal({
-                    title: '¿Desea borrar la ultima cantidad: ' + $(this).parent('tr').find('#product').text() +'?',
+                    title: '¿Desea borrar la ultima cantidad: ' + $(this).parent('tr').find('#product').text() + '?',
                     type: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -351,7 +243,7 @@
                             'success'
                         )
                         ProductRestaID(id);
-                       }
+                    }
                 });
 
             }
@@ -480,6 +372,8 @@
                 )
 
             }
+
+
         ).fail(
             function() {
                 alert('Ha fallado guardar ticket');
@@ -489,5 +383,27 @@
         );
 
 
+    }
+    $('#saveTicket').on('click', newTicket);
+
+    function newTicket(event) {
+        if ($('#tableTicket tr td').length > 1) {
+            $.ajax({
+                url: 'ticketajax/newTicket2',
+                type: 'get',
+                dataType: 'json'
+            }).done(
+                // function(json) {
+                //     var res = json.res;
+                //     alert(res);
+                // }
+            ).fail(
+                function() {
+                    alert('Error nueva ticket');
+                }
+            );
+            $('#tableTicket').empty();
+            $('#totalPrice').text("0 €");
+        }
     }
 })();
