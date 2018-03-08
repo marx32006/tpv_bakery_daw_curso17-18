@@ -1,0 +1,35 @@
+<div style="max-width:900px;margin: 50px auto 0;">
+    <h1 class="h2 text-light text-center push-top-bottom animation-slideDown">
+        <i class="fa fa-user"></i> Listado de detalle de Ticket
+    </h1>
+    <div class="block animation-fadeInQuickInv">
+        <p>Mensaje: {{mensaje}}</p>
+        <p>Mensaje: {{mensaje1}}</p>
+        <table id="general-table" class="table table-striped table-vcenter table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Miembro</th>
+                    <th class="text-center">Producto</th>
+                    <th class="text-center">Cantidad</th>
+                    <th class="text-center">Precio</th>
+                    <th class="text-center"></th>
+                </tr>
+            </thead>
+            <tbody id="listTicketDetail">
+                
+            </tbody>
+            
+        </table>
+        <div class="text-center">
+            {{clickPaginacion}}
+        </div>
+        <form id="form-login" class="form-horizontal">
+            <div class="form-group">
+                <div class="col-xs-12 text-center">
+                    <a class="btn btn-primary" href="index.php"><i class="fa fa-reply"></i> Volver</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
